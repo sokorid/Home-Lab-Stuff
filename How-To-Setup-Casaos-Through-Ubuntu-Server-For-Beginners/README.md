@@ -38,7 +38,7 @@ let's make sure that netplan is set up
 ls /etc/netplan/
 ```
 
-now let's make the folder to house your static IP address
+now let's make the file to house your static IP address
 ```Command
 sudo nano /etc/netplan/01-network-manager-all.yaml
 ```
