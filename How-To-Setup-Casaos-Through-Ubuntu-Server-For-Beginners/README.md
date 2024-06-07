@@ -215,7 +215,7 @@ otherwise, it will not allow you to do anything
 - now select these two options to enable them Force SSL and HTTP/2 Support
 - now click save
 - now go to your newly created URL for example
-- #https://psw.yourdomainname.duckdns.org
+- https:// psw.yourdomainname.duckdns.org
 
 ## Dashboard Homarr
 https://homarr.dev/docs/getting-started/installation/
