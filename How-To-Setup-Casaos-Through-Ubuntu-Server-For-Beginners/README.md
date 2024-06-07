@@ -26,10 +26,12 @@
 - then select the drive with the Ubuntu install media.
 
 ## Install Guide For Ubuntu Server
-
+most important things to take note of is
+- when you get to the IP screen pay attention to what your web interface is
+- make sure you disable lvm
+- make sure you enable SSH
 
 ## Static IP
-
 
 let's make sure that netplan is set up
 ```Command
