@@ -216,6 +216,11 @@ otherwise, it will not allow you to do anything
 - now click save
 - now go to your newly created URL for example
 - https:// psw.yourdomainname.duckdns.org
+- and now you should be done
+- now if you want to use this on your browser go and download the extension BitWarden
+- choose self-hosted and enter your domain that you created for example https:// psw.yourdomainname.duckdns.org
+- now login and you should be good to go
+
 
 ## Dashboard Homarr
 https://homarr.dev/docs/getting-started/installation/
