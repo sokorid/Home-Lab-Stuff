@@ -77,6 +77,7 @@ sudo vim /etc/pam.d/sshd
 Then find the following two lines:
 - session    optional     pam_motd.so  motd=/run/motd.dynamic
 - session    optional     pam_motd.so noupdate
+
 Once you locate them, comment them down by placing # in front of each line
 
 this command will make it take effect
