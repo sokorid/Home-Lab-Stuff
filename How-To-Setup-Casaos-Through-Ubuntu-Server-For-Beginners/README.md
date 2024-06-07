@@ -179,6 +179,44 @@ now inside of NginxProxyManager go to SSL Certificates
 
 if it fails wait a little bit and try it again
 
+## Pi-hole
+if you're looking for a better ad block list here's a website that should help you do that
+
+https://avoidthehack.com/best-pihole-blocklists
+- I recommend using this one https://firebog.net/
+- anything colored green means it receives the most updates as soon as it's available
+- in Pi-hole go to Add Adlist
+- take the URL that you copied and paste it inside of Address:
+- then click add
+- repeat this to your happy
+- once you're done go to tools
+- and go to Update Gravity
+- click update
+- and it will download all the necessary data from those URLs that you added to the Adlist
+- once it's completed you should be good to go
+
+## VaultWarden
+to do anything with this you need to do a proxy to make it Force https:// 
+otherwise, it will not allow you to do anything
+- go to NginxProxyManager
+- go to host and to Proxy Hosts
+- add a new Proxy Host
+- enter in your domain that you would like to use for example
+- psw.yourdomainname.duckdns.org
+- Press Enter To Confirm your domain
+- go to Forward Hostname / IP
+- Enter the IP address of your server
+- go to Forward Port
+- enter in whatever Port you created in the install of VaultWarden
+- it's typically if installed through casaos it is 10380 but you could change that to whatever
+- now select Block Common Exploits and add it
+- now go to SSL
+- and add you're already created SSL Certificate
+- now select these two options to enable them Force SSL and HTTP/2 Support
+- now click save
+- now go to your newly created URL for example
+- #https://psw.yourdomainname.duckdns.org
+
 ## Dashboard Homarr
 https://homarr.dev/docs/getting-started/installation/
 
