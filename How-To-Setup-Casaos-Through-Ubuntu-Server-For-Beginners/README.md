@@ -27,7 +27,7 @@
 
 ## Install Guide For Ubuntu Server
 most important things to take note of is
-- when you get to the IP screen pay attention to what your web interface is
+- when you get to the IP screen, pay attention to what your web interface is
 - make sure you disable lvm
 - make sure you enable SSH
 
@@ -108,9 +108,5 @@ https://www.duckdns.org/
 ## Dashboard Homarr
 https://homarr.dev/docs/getting-started/installation/
 
-
-## Icons
-
-```text
+More Icons
 https://github.com/walkxcode/dashboard-icons/
-```
