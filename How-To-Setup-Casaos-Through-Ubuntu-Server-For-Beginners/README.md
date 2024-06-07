@@ -176,6 +176,7 @@ now inside of NginxProxyManager go to SSL Certificates
 - leave this blank Propagation Seconds
 - now select I Agree to the Let's Encrypt Terms of Service
 - now click save
+
 if it fails wait a little bit and try it again
 
 ## Dashboard Homarr
