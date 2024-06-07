@@ -77,8 +77,7 @@ sudo vim /etc/pam.d/sshd
 Then find the following two lines:
 - session    optional     pam_motd.so  motd=/run/motd.dynamic
 - session    optional     pam_motd.so noupdate
-- Once you locate them, comment them down by placing # in front of each line
-
+Once you locate them, comment them down by placing # in front of each line
 
 this command will make it take effect
 ```Command
@@ -93,6 +92,7 @@ bash -c "$(wget -qLO - https://raw.githubusercontent.com/sokorid/Home-Lab-Stuff/
 ## Install Guide For Casa OS
 Casa OS website:
 https://casaos.io/
+
 copy the command and paste it in ssh
 ```curl
 curl -fsSL https://get.casaos.io | sudo bash
