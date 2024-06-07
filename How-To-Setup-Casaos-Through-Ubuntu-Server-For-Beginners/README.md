@@ -58,6 +58,11 @@ we need to change three different things
 - addresses: [IP/24] to [changeme/24] whatever you want your static IP to be
 - gateway4: IP to the IP address of your gateway
 
+Keybinds For Nano
+- Control + O = Save
+- Press Enter To Confirm
+- Control + X = Close
+
 to find out the information you need use this command
 ```Command
 ip a
@@ -81,6 +86,11 @@ Then find the following two lines:
 - session    optional     pam_motd.so noupdate
 
 Once you locate them, comment them down by placing # in front of each line
+
+Keybinds For Vim
+- Press I To Enter Edit Mode
+- Press Escape To Leave Edit Mode
+- Type :wq To Save And Close
 
 this command will make it take effect
 ```Command
