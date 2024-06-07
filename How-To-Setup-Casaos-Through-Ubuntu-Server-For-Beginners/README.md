@@ -43,6 +43,35 @@ if you don't know what the IP address is this is how you can find it
 ```Command
 ip a
 ```
+## SSH Open
+
+now let's check to make sure the server and all of its packages are up to date
+```Command
+sudo apt-get -y update
+```
+now let's install the updates
+```Command
+sudo apt-get -y upgrade
+```
+
+now let's install two helpful packages
+- they're not necessary but I recommend it
+```Command
+sudo apt-get install -y neofetch htop
+```
+now let's make sure they installed
+
+this is a helpful tool to give you information on your PC specs
+```Command
+neofetch
+```
+
+if you are used to Windows this is an advanced version of the task manager
+- Keybinds to Close htop is F10
+```Command
+htop
+```
+
 
 ## Static IP
 
