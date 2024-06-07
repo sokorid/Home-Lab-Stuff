@@ -112,7 +112,3 @@ https://homarr.dev/docs/getting-started/installation/
 ```text
 https://github.com/walkxcode/dashboard-icons/
 ```
-
-
-```Command
-```
