@@ -39,6 +39,11 @@ We Are Going To SSH Into It
 - you need to replace the username with the username that you created in the install
 - you need to replace the IP address with the IP address that is currently set up on the server
 
+if you don't know what the IP address is this is how you can find it
+```Command
+ip a
+```
+
 ## Static IP
 
 let's make sure that netplan is set up
