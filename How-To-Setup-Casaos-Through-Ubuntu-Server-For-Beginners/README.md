@@ -52,9 +52,9 @@ network:
      gateway4: IP
 ```
 we need to change three different things
-enp0s0 to whatever our Network interface is 
-addresses: [IP/24] to [changeme/24] whatever you want your static IP to be
-gateway4: IP to the IP address of your gateway
+- enp0s0 to whatever our Network interface is 
+- addresses: [IP/24] to [changeme/24] whatever you want your static IP to be
+- gateway4: IP to the IP address of your gateway
 
 to find out the information you need use this command
 ```Command
@@ -62,9 +62,9 @@ ip a
 ```
 
 ## Remove SSH Welcome
-this is not necessary to remove unless 
-you don't like seeing all the information every time 
-you SSH into your Server
+- this is not necessary to remove unless 
+- you don't like seeing all the information every time 
+- you SSH into your Server
 
 ```Command
 sudo nano /etc/ssh/sshd_config
@@ -75,9 +75,9 @@ Once the file is opened, find the PrintMotd field and set its value to no.
 sudo vim /etc/pam.d/sshd
 ```
 Then find the following two lines:
-session    optional     pam_motd.so  motd=/run/motd.dynamic
-session    optional     pam_motd.so noupdate
-Once you locate them, comment them down by placing # in front of each line
+- session    optional     pam_motd.so  motd=/run/motd.dynamic
+- session    optional     pam_motd.so noupdate
+- Once you locate them, comment them down by placing # in front of each line
 
 
 this command will make it take effect
