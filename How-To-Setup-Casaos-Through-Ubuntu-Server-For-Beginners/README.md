@@ -3,14 +3,14 @@
 
 ## Things you'll need:
 
--Secondary Computer: that you will be using for your Home Server
--Ethernet Cable Plugged Up To Your Router Or Switch
--USB Flash Drive (8GB or larger): Important: All data on the drive will be erased 
--during the installation process. Make sure to back up any important files!
--Ubuntu Server ISO File: Download the latest version directly from the official
--Ubuntu website: https://ubuntu.com/download/server#release-notes
--BalenaEtcher: This user-friendly tool will help you create the bootable USB drive. 
--Download it here: https://etcher.balena.io/#download-etcher
+- Secondary Computer: that you will be using for your Home Server
+- Ethernet Cable Plugged Up To Your Router Or Switch
+- USB Flash Drive (8GB or larger): Important: All data on the drive will be erased 
+- during the installation process. Make sure to back up any important files!
+- Ubuntu Server ISO File: Download the latest version directly from the official
+- Ubuntu website: https://ubuntu.com/download/server#release-notes
+- BalenaEtcher: This user-friendly tool will help you create the bootable USB drive. 
+- Download it here: https://etcher.balena.io/#download-etcher
 
 ## Boot the installer
 
