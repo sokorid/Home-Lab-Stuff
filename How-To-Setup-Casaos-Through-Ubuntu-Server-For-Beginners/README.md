@@ -14,16 +14,16 @@
 
 ## Boot the installer
 
-Plug the USB stick into the system to be installed and start it.
-Most computers will automatically boot from USB or DVD, though in 
-some cases this is disabled to improve boot times. If you don’t see the 
-boot message and the “Welcome” screen which should appear after it, 
-you will need to set your computer to boot from the install media.
-There should be an on-screen message when the computer starts 
-telling you what key to press for settings or a boot menu. Depending on 
-the manufacturer, this could be Escape, F2, F10 or F12. Simply restart 
-your computer and hold down this key until the boot menu appears, 
-then select the drive with the Ubuntu install media.
+- Plug the USB stick into the system to be installed and start it.
+- Most computers will automatically boot from USB or DVD, though in 
+- some cases this is disabled to improve boot times. If you don’t see the 
+- boot message and the “Welcome” screen which should appear after it, 
+- you will need to set your computer to boot from the install media.
+- There should be an on-screen message when the computer starts 
+- telling you what key to press for settings or a boot menu. Depending on 
+- the manufacturer, this could be Escape, F2, F10 or F12. Simply restart 
+- your computer and hold down this key until the boot menu appears, 
+- then select the drive with the Ubuntu install media.
 
 ## Install Guide For Ubuntu Server
 
