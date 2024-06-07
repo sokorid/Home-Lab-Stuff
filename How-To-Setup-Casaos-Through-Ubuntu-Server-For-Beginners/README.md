@@ -141,7 +141,7 @@ sudo systemctl restart ssh
 
 ## Clear Port 53
 ```bash
-bash -c "$(wget -qLO - https://raw.githubusercontent.com/sokorid/Home-Lab-Stuff/main/How-To-Setup-Casaos-Through-Ubuntu-Server-For-Beginners/Clear_Port_53.sh)"
+sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/sokorid/Home-Lab-Stuff/main/How-To-Setup-Casaos-Through-Ubuntu-Server-For-Beginners/Clear_Port_53.sh)"
 ```
 
 ## Install Guide For Casa OS
