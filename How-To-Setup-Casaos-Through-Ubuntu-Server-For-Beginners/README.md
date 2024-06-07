@@ -59,7 +59,7 @@ now let's install two helpful packages
 ```Command
 sudo apt-get install -y neofetch htop
 ```
-now let's make sure they installed
+now let's make sure they're installed
 
 this is a helpful tool to give you information on your PC specs
 ```Command
