@@ -156,6 +156,27 @@ curl -fsSL https://get.casaos.io | sudo bash
 ## Free SSL Certificates
 https://www.duckdns.org/
 
+login with one of the options
+- copy your token
+- create a valid domain
+- once it's created change your current ip to the IP address of your server
+- and then click update IP
+ 
+## NginxProxyManager
+now inside of NginxProxyManager go to SSL Certificates
+- Add Let's Encrypt Certificate
+- now let's type in your domain like this
+- yourdomainname.duckdns.org
+- Press Enter To Confirm your domain
+- *.yourdomainname.duckdns.org
+- Press Enter To Confirm your domain
+- Select Use a DNS challenge
+- DNS Provider Select DuckDNS
+- replace this with your token, your-duckdns-token
+- leave this blank Propagation Seconds
+- now select I Agree to the Let's Encrypt Terms of Service
+- now click save
+if it fails wait a little bit and try it again
 
 ## Dashboard Homarr
 https://homarr.dev/docs/getting-started/installation/
