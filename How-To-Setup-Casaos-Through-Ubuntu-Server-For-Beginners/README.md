@@ -153,6 +153,12 @@ copy the command and paste it in ssh
 curl -fsSL https://get.casaos.io | sudo bash
 ```
 
+just in case you accidentally changed it to a port that is not available this is to fix it
+```bash
+sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/sokorid/Home-Lab-Stuff/main/How-To-Setup-Casaos-Through-Ubuntu-Server-For-Beginners/change_casaos_web_ui_port.sh)"
+```
+
+
 ## Free SSL Certificates
 https://www.duckdns.org/
 
