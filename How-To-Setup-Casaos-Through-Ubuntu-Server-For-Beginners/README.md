@@ -35,7 +35,7 @@ Once It's Finished Installing
 
 We Are Going To SSH Into It
 - there's a batch file in the Repository either copy it or you can download it which will make it easier for us to SSH into the server
-- https://github.com/sokorid/Home-Lab-Stuff/blob/9b16c6fcae1b2eadc98e93e40f1a6ce466f496eb/How-To-Setup-Casaos-Through-Ubuntu-Server-For-Beginners/Open%20SSH.bat
+- https://github.com/sokorid/Home-Lab-Stuff/blob/main/How-To-Setup-Casaos-Through-Ubuntu-Server-For-Beginners/Open%20SSH.bat
 - you need to replace the username with the username that you created in the install
 - you need to replace the IP address with the IP address that is currently set up on the server
 
