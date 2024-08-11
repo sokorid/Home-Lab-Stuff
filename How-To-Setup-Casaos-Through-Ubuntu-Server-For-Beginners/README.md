@@ -1,5 +1,5 @@
 ## YouTube Video Tutorial
-[link]
+[[link]](https://youtu.be/7O3H2OiVSq4)
 
 ## Things you'll need:
 
