@@ -23,7 +23,7 @@
 - telling you what key to press for settings or a boot menu. Depending on 
 - the manufacturer, this could be Escape, F2, F10 or F12. Simply restart 
 - your computer and hold down this key until the boot menu appears, 
-- then select the drive with the Ubuntu install media.
+- then select the drive with the Debian install media.
 
 ## Install Guide For Debian Server
 my recommendations
