@@ -69,7 +69,8 @@ cls
 ssh UserName@IPAddress
 ```
 and then do save as and then replace the .txt to .bat
- - you should get the same result
+
+you should get the same result
 
 ## SSH Open
 if you did it right it should ask you to agree to a fingerprint just type "yes"
