@@ -72,13 +72,13 @@ and then do save as and then replace the .txt to .bat
 
 you should get the same result
 
+## SSH Open
+if you did it right it should ask you to agree to a fingerprint just type "yes"
+
 let's install are text editors
 ```command
 sudo apt install -y nano neovim
 ```
-
-## SSH Open
-if you did it right it should ask you to agree to a fingerprint just type "yes"
 
 Now Let's Set Up A Static IP Address
 
