@@ -39,7 +39,7 @@ Once It's Finished Installing
 ## Time To Start Setting Up The Server
 login to root account
  - instead of typing in your username in the login screen log in using root and your password
- - 
+
 now we need to install two useful packages
 
 use this command
