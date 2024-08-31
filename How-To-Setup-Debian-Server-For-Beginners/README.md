@@ -122,6 +122,11 @@ address IP
 netmask 255.255.255.0
 gateway IP
 ```
+we need to change three different things
+- address: IP to the IP address you want to use
+- netmask: you might have to change it but most people's setup should be this nowadays
+- gateway: IP to your IP gateway
+
 Keybinds For Nano
 - Control + O = Save
 - Press Enter To Confirm
