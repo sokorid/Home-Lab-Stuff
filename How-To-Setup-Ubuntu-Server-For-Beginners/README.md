@@ -205,7 +205,7 @@ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 ```
 now let's open the auto-update file
 ```command
-sudo vim /etc/apt/apt.conf.d/20auto-upgrades
+sudo nano /etc/apt/apt.conf.d/20auto-upgrades
 ```
 This file allows you to define how often the auto updates take place. The lines in the file are:
 - Update-Package-Lists. Use 1 to enable auto-update.
