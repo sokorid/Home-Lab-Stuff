@@ -14,9 +14,9 @@ A bootable USB drive lets you install an operating system, run live environments
 ---
 
 ## Jump to your platform:
-- 🪟 [Windows](https://github.com/sokorid/Home-Lab-Stuff/blob/main/%F0%9F%92%BE%20Best%20Tools%20to%20Create%20a%20Bootable%20USB%20Drive.md#-windows)
-- 🍎 [macOS](https://github.com/sokorid/Home-Lab-Stuff/blob/main/%F0%9F%92%BE%20Best%20Tools%20to%20Create%20a%20Bootable%20USB%20Drive.md#-macos)
-- 🐧 [Linux](https://github.com/sokorid/Home-Lab-Stuff/blob/main/%F0%9F%92%BE%20Best%20Tools%20to%20Create%20a%20Bootable%20USB%20Drive.md#-linux)
+- 🪟 [Windows](#-windows)
+- 🍎 [macOS](#-macos)
+- 🐧 [Linux](#-linux)
 
 ---
 
