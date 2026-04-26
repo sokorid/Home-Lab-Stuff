@@ -1,229 +1,380 @@
 ## YouTube Video Tutorial
 [update me]
 
-## Things you'll need:
+# 🖥️ How To Set Up Ubuntu Server
 
-- Secondary Computer: that you will be using for your Home Server
-- Ethernet Cable Plugged Up To Your Router Or Switch
-- USB Flash Drive (8GB or larger): Important: All data on the drive will be erased 
-- during the installation process. Make sure to back up any important files!
-- Ubuntu Server ISO File: Download the latest version directly from the official
-- Ubuntu website: https://ubuntu.com/download/server#release-notes
-- BalenaEtcher: This user-friendly tool will help you create the bootable USB drive. 
-- Download it here: https://etcher.balena.io/#download-etcher
+## 🛠️ Things You'll Need
 
-## Boot the installer
+- 🖥️ **Secondary Computer** — the machine you'll be using as your Home Server
+- 🔌 **Ethernet Cable** — plugged into your router or switch
+- 💾 **USB Flash Drive** (8 GB or larger) — ⚠️ All data on the drive will be erased during installation. Back up any important files first!
+- 📥 **Ubuntu Server ISO File** — download the latest version from the official site: [ubuntu.com/download/server](https://ubuntu.com/download/server#release-notes)
+- 🔧 **A Bootable USB Tool** — not sure which one to use? Check out [The Best Tools for Creating a Bootable USB Drive](https://github.com/sokorid/Home-Lab-Stuff/blob/d1247a35f9c2222f91a1ff189f7767ebf7f69f07/%F0%9F%92%BE%20Best%20Tools%20to%20Create%20a%20Bootable%20USB%20Drive.md)
 
-- Plug the USB stick into the system to be installed and start it.
-- Most computers will automatically boot from USB or DVD, though in 
-- some cases this is disabled to improve boot times. If you don’t see the 
-- boot message and the “Welcome” screen which should appear after it, 
-- you will need to set your computer to boot from the install media.
-- There should be an on-screen message when the computer starts 
-- telling you what key to press for settings or a boot menu. Depending on 
-- the manufacturer, this could be Escape, F2, F10 or F12. Simply restart 
-- your computer and hold down this key until the boot menu appears, 
-- then select the drive with the Ubuntu install media.
+---
 
-## Install Guide For Ubuntu Server
-most important things to take note of is
-- when you get to the IP screen, pay attention to what your web interface is
-- make sure you disable lvm
-- make sure you enable SSH
+## 🚀 Boot the Installer
 
-Once It's Finished Installing
+1. Plug the USB drive into the target machine and power it on.
+2. Most computers will automatically boot from USB — if yours doesn't, you'll need to open the boot menu.
+3. When the computer starts, look for an on-screen message telling you which key to press for settings or the boot menu. This is usually **Escape, F2, F10, or F12** depending on your manufacturer.
+4. Restart, hold that key, and select your USB drive from the boot menu.
+5. You should see the Ubuntu boot message followed by the **"Welcome"** screen.
 
-## Time To Start Setting Up The Server
-login to your account
+---
 
-now let's make sure the system is up to date
-   
-```Command
-sudo apt update
-```
-once it finishes run this command
-```Command
-sudo apt upgrade
-```
+## 📋 Install Guide for Ubuntu Server
 
-once this finishes up we can switch over to SSH
+The three most important things to watch out for during installation:
 
-if you don't know what the IP address is this is how you can find it
-```Command
-ip a
+- ⚠️ **Disable LVM** — make sure this is turned off unless you specifically need it.
+- ✅ **Enable SSH** — this is essential for managing your server remotely.
+
+---
+
+## ✅ Once It's Finished Installing
+
+Once the installer finishes, the server will reboot. Remove the USB drive and log in with the credentials you created during setup.
+
+---
+
+## 🖥️ Time To Start Setting Up The Server
+
+Log into your account, then let's make sure the system is up to date before we do anything else.
+
+```bash
+sudo apt update && sudo apt upgrade -y
 ```
 
-We Are Going To SSH Into It
-- there's a batch file in the Repository either copy it or you can download it which will make it easier for us to SSH into the server
-- https://github.com/sokorid/Home-Lab-Stuff/blob/main/How-To-Setup-Casaos-Through-Ubuntu-Server-For-Beginners/Open%20SSH.bat
-- you need to replace the username with the username that you created in the install
-- you need to replace the IP address with the IP address that is currently set up on the server
+---
 
-if you create a text file and enter this into it
-```text
-scho off
+## 🌐 Setting Up a Static IP Address
+
+Before we make any changes, we need to gather a few pieces of information.
+
+### Step 1 — Find Your Default Gateway
+
+```bash
+ip r
+```
+
+Look for the line that starts with **"default via"** — the IP address right after that is your gateway. Write it down.
+
+### Step 2 — Find Your Network Interface & Current IP
+
+```bash
+ip -4 -br addr
+```
+
+- On the **left** you'll see your network interface name — it should look something like `enp0s0`
+- On the **right** you'll see your current IPv4 address
+
+Write both of those down before moving on.
+
+---
+
+### Step 3 — Create the Static IP Config File
+
+```bash
+sudo nano /etc/netplan/01-network-manager-all.yaml
+```
+
+Paste the following into the file:
+
+```yaml
+network:
+  version: 2
+  ethernets:
+    enp0s0:
+      dhcp4: false
+      addresses: [IP/24]
+      gateway4: IP
+```
+
+You need to change three things:
+
+- `enp0s0` → your network interface name
+- `addresses: [IP/24]` → the static IP you want, e.g. `[192.168.1.100/24]`
+- `gateway4: IP` → your gateway IP from Step 1
+
+**Nano Keybinds:**
+
+| Action | Keybind |
+|--------|---------|
+| Save | `Ctrl + O` |
+| Confirm | `Enter` |
+| Close | `Ctrl + X` |
+
+---
+
+### Step 4 — Apply the Changes
+
+> 💡 **Optional — Recommended if on a remote server:**
+> If you're worried about losing your connection due to a typo, use this instead:
+> ```bash
+> sudo netplan try
+> ```
+> This applies the config and waits for you to press `Enter` to confirm. If you don't confirm within 120 seconds — for example, because you accidentally locked yourself out — it automatically reverts to the previous working settings.
+
+When you're ready, apply the changes:
+
+```bash
+sudo netplan apply
+```
+
+---
+
+### Step 5 — Verify the IP
+
+```bash
+ip -4 -br addr
+```
+
+If everything went correctly you should see the static IP address you set up.
+
+---
+
+## 🔐 SSH Into Your Server
+
+Once that's done, we can switch over to SSH on your main computer — so you can easily follow along or copy and paste commands.
+
+**Skip to your platform:**
+
+- 🪟 [Windows](#-windows)
+- 🍎 [macOS](#-macos)
+- 🐧 [Linux](#-linux)
+
+---
+
+### 🪟 Windows
+
+You can SSH in by opening **CMD** and running:
+
+```bash
+ssh UserName@IPAddress
+```
+
+**Want an easier way?** There's a batch file in the repository you can download or copy — it makes SSHing in much quicker:
+
+[📄 Download Open SSH.bat](https://github.com/sokorid/Home-Lab-Stuff/blob/main/How-To-Setup-Casaos-Through-Ubuntu-Server-For-Beginners/Open%20SSH.bat)
+
+Just replace `UserName` with the username you created during install, and `IPAddress` with your server's static IP.
+
+Alternatively, create a new text file, paste the following in, then save it as `.bat` instead of `.txt`:
+
+```bat
+@echo off
 cls
 title SSH Client
 color f
 cls
 ssh UserName@IPAddress
 ```
-and then do save as and then replace the .txt to .bat
 
-you should get the same result
+---
 
-## SSH Open
-if you did it right it should ask you to agree to a fingerprint just type "yes"
+### 🍎 macOS
 
-Now Let's Set Up A Static IP Address
+Open **Terminal** and run:
 
-let's make the file to house your static IP address
-```Command
-sudo nano /etc/netplan/01-network-manager-all.yaml
+```bash
+ssh UserName@IPAddress
 ```
-now copy the code and paste it in
-```text
-network:
- version: 2
- ethernets:
-   enp0s0:
-     dhcp4: false
-     addresses: [IP/24]
-     gateway4: IP
+
+---
+
+### 🐧 Linux
+
+Open your **terminal** and run:
+
+```bash
+ssh UserName@IPAddress
 ```
-we need to change three different things
- - enp0s0 to whatever our Network interface is
- - addresses: [IP/24] to [changeme/24] whatever you want your static IP to be
- - gateway4: IP to the IP address of your gateway
 
-Keybinds For Nano
+---
 
- - Control + O = Save
- - Press Enter To Confirm
- - Control + X = Close
+> ✅ **SSH Open:** If everything went correctly, you'll be asked to confirm a fingerprint — just type `yes` and hit Enter.
 
-to find out the information you need use this command
-```command
-ip a
-```
-you're looking for altname
-- it should look like this "enp0s0"
-- or pretty similar just make sure you copy yours
-- so now that you know what you're
-- Network interface is
-- go back to 
-```Command
-sudo nano /etc/netplan/01-network-manager-all.yaml
-```
-and replace where it says enp0s0
+---
 
-with whatever yours is
+## 💡 Quick Tips (Optional)
 
-if you want to make the changes take effect now type this command
-```command
-reboot
-```
-your system will reboot and you may need to reconfigure your SSH to the new IP address that you set it to
+Everything below this point is optional, but handy to know.
 
-if you didn't change it to a new one you don't have to worry about that
+### Switch to the Root User
 
-## everything below this is not necessary
-but you can continue with the next steps if you want
+If you need root access without logging out:
 
-### Quick Little Tip
-
-if you need to gain access to the root user and you don't want to have to log out and log back in just type this command in
-```command
+```bash
 sudo -i
 ```
-and to log back into your account use this command
 
-just replace UserName to your username
-```command
+### Switch Back to Your Account
+
+Replace `UserName` with your actual username:
+
+```bash
 su UserName
 ```
-and to go back to the user directory type this command
-```command
+
+### Return to Your Home Directory
+
+```bash
 cd
 ```
 
-### Too Helpful Little Tools
+### Remove SSH Welcome Message
 
-we're going to download and install NeoFetch and Htop
+This is not necessary unless you don't want to see the system info every time you SSH into your server.
 
-the command is
-```command
-sudo apt install -y neofetch htop
-```
-now let's make sure they're installed
-
-this is a helpful tool to give you information on your PC specs
-```Command
-neofetch
-```
-
-if you are used to Windows this is an advanced version of the task manager
-- Keybinds to Close htop is F10
-```Command
-htop
-```
-
-### Remove SSH Welcome
-- this is not necessary to remove unless 
-- you don't like seeing all the information every time 
-- you SSH into your Server
-```Command
+```bash
 sudo nano /etc/pam.d/sshd
 ```
-Then find the following two lines:
-- session    optional     pam_motd.so  motd=/run/motd.dynamic
-- session    optional     pam_motd.so noupdate
-Once you locate them, comment them down by placing # in front of each line
 
-Keybinds For Nano
-- Control + O = Save
-- Press Enter To Confirm
-- Control + X = Close
+Find the following two lines:
 
-this command will make it take effect
-```Command
+```text
+session    optional     pam_motd.so  motd=/run/motd.dynamic
+session    optional     pam_motd.so noupdate
+```
+
+Comment them out by placing `#` in front of each line, then save and close.
+
+**Nano Keybinds:**
+
+| Action | Keybind |
+|--------|---------|
+| Save | `Ctrl + O` |
+| Confirm | `Enter` |
+| Close | `Ctrl + X` |
+
+Now restart SSH to apply the change:
+
+```bash
 sudo systemctl restart ssh
 ```
 
-### Automatic Updates
-Install the Package the command is
-```command
+---
+
+## 🔄 Automatic Updates
+
+Keeping your server up to date is important for security. Let's install and enable automatic updates.
+
+### Install & Enable
+
+First, make sure everything is up to date, then install the package and run the setup wizard:
+
+```bash
+sudo apt update
+```
+
+```bash
 sudo apt install unattended-upgrades
 ```
-now let's verify the installation
-```command
-systemctl status unattended-upgrades
+
+```bash
+sudo dpkg-reconfigure --priority=low unattended-upgrades
 ```
-Open the Configuration File
-```command
+
+> When the purple screen appears, select **Yes** to enable automatic updates.
+
+---
+
+### ⚙️ Configure for Security Updates Only (Optional)
+
+By default, `unattended-upgrades` is already set to prioritize security patches. But if you want to make sure it's strictly limited to security updates only — and not pulling in general system updates — you can verify and tighten those settings manually.
+
+Open the config file:
+
+```bash
 sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 ```
-now let's open the auto-update file
-```command
-sudo nano /etc/apt/apt.conf.d/20auto-upgrades
-```
-This file allows you to define how often the auto updates take place. The lines in the file are:
-- Update-Package-Lists. Use 1 to enable auto-update.
-- Unattended-Upgrade. Type 1 to enable auto-upgrade.
-- AutocleanInterval. Enable auto-clean packages for a specific number of days
-now let's add AutocleanInterval and set it to 7 days
 
-means the system clears the download archive every seven days.
+**Nano Keybinds:**
+
+| Action | Keybind |
+|--------|---------|
+| Save | `Ctrl + O` |
+| Confirm | `Enter` |
+| Close | `Ctrl + X` |
+
+Look for the `Allowed-Origins` section. Make sure the security line is active and everything else is commented out with `//`:
+
 ```text
-APT::Periodic::AutocleanInterval "7";
-```
-now let's apply the changes
-```command
-sudo systemctl restart unattended-upgrades.service
-```
-now let's Testing Automatic Upgrades
-```command
-sudo unattended-upgrades --dry-run --debug
+Unattended-Upgrade::Allowed-Origins {
+    "${distro_id}:${distro_codename}-security";
+//  "${distro_id}:${distro_codename}-updates";
 ```
 
-this is the end of the guide hopefully this helps someone out there peace out
+**Not sure what your `distro_id` or `distro_codename` are?** Run this:
+
+```bash
+cat /etc/os-release
+```
+
+Look for these two lines — the value after the `=` is what you need:
+
+```text
+VERSION_CODENAME=distro_codename
+ID=distro_id
+```
+
+---
+
+### 🔁 Handle Automatic Reboots (Optional)
+
+Security patches — especially kernel updates — often require a reboot to fully take effect. You can configure Ubuntu to reboot itself automatically at a time you're not using the machine.
+
+> ⚠️ **Heads up:** If other services aren't configured to start correctly on boot, an automatic reboot can cause unexpected downtime. Only enable this if you're comfortable with how your services are set up.
+
+In the same config file:
+
+```bash
+sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+```
+**Nano Keybinds:**
+
+| Action | Keybind |
+|--------|---------|
+| Save | `Ctrl + O` |
+| Confirm | `Enter` |
+| Close | `Ctrl + X` |
+
+Find and update these lines:
+
+```text
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "04:00";
+```
+
+Set the time to whenever you're least likely to be using the server.
+
+---
+
+### ✅ Test It
+
+Let's do a dry run to make sure everything is working correctly. This simulates an update without actually changing anything:
+
+```bash
+sudo unattended-upgrade --dry-run --debug
+```
+
+---
+
+### 📋 Monitoring Logs
+
+Want to check what your server updated while you were away? Here's where to look:
+
+**Summary log:**
+```bash
+cat /var/log/unattended-upgrades/unattended-upgrades.log
+```
+
+**Detailed dpkg log:**
+```bash
+cat /var/log/unattended-upgrades/unattended-upgrades-dpkg.log
+```
+
+---
+
+### 😊 That wraps up the guide! Hopefully, this helps someone out there. Peace out! 😊
