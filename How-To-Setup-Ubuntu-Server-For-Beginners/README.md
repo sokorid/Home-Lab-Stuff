@@ -1,5 +1,7 @@
-## YouTube Video Tutorial
-[update me]
+## ▶️ YouTube Video Tutorial
+- [Step-by-Step Video Tutorial]
+
+---
 
 # 🖥️ How To Set Up Ubuntu Server
 
@@ -222,6 +224,7 @@ su UserName
 ```bash
 cd
 ```
+---
 
 ### Remove SSH Welcome Message
 
