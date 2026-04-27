@@ -89,8 +89,11 @@ network:
   ethernets:
     enp0s0:
       dhcp4: false
-      addresses: [IP/24]
-      gateway4: IP
+      addresses:
+        - IP/24
+      routes:
+        - to: default
+          via: IP
 ```
 
 You need to change three things:
