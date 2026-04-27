@@ -114,8 +114,8 @@ network:
 You need to change three things:
 
 - `enp0s0` → your network interface name
-- `addresses: [IP/24]` → the static IP you want, e.g. `[192.168.1.100/24]`
-- `gateway4: IP` → your gateway IP from Step 1
+- `addresses: IP/24` → the static IP you want, e.g. `- 192.168.1.100/24`
+- `via: IP` → your gateway IP from Step 1
 
 **Nano Keybinds:**
 
