@@ -44,6 +44,18 @@ Once the installer finishes, the server will reboot. Remove the USB drive and lo
 
 Log into your account, then let's make sure the system is up to date before we do anything else.
 
+### 🚀 Option 1: Automated Setup
+> [!WARNING]
+> ⚠️ **Security Tip:** Always inspect third-party scripts before running them. You can view the source [here](https://github.com/sokorid/Tools-And-Scripts/blob/main/Linux/Ubuntu/Scripts/Auto_Setup_Ubuntu_Server.sh).
+>
+> 💡 **Want to skip the manual setup?** To simplify the installation, you can use my custom automation script. It handles the bulk of the configuration for you, requiring only a few manual 'yes/no' confirmations to complete the setup.
+> ```bash
+> sudo bash -c "$(wget -qLO - https://raw.githubusercontent.com/sokorid/Tools-And-Scripts/refs/heads/main/Linux/Ubuntu/Scripts/Auto_Setup_Ubuntu_Server.sh)"
+> ```
+> Otherwise, continue below both options are fully viable.
+
+### 🛠️ Option 2: Manual Update
+
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
