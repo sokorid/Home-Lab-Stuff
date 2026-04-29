@@ -106,6 +106,8 @@ network:
       routes:
         - to: default
           via: IP
+      nameservers:
+          addresses: [1.1.1.1, 8.8.8.8]
 ```
 
 You need to change three things:
