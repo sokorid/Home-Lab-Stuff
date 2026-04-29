@@ -46,7 +46,7 @@ Log into your account, then let's make sure the system is up to date before we d
 
 ### 🚀 Option 1: Automated Setup
 > [!WARNING]
-> ⚠️ **Security Tip:** Always inspect third-party scripts before running them. You can view the source [here](https://raw.githubusercontent.com/sokorid/Tools-And-Scripts/refs/heads/main/Linux/Ubuntu/Scripts/Auto_Setup_Ubuntu_Server.sh).
+> ⚠️ **Security Tip:** Always inspect third-party scripts before running them. You can view the source [here](https://github.com/sokorid/Tools-And-Scripts/blob/main/Linux/Ubuntu/Scripts/Auto_Setup_Ubuntu_Server.sh).
 >
 > 💡 **Want to skip the manual setup?** To simplify the installation, you can use my custom automation script. It handles the bulk of the configuration for you, requiring only a few manual 'yes/no' confirmations to complete the setup.
 > ```bash
