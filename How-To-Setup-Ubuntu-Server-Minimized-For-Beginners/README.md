@@ -54,7 +54,7 @@ Log into your account, then let's make sure the system is up to date before we d
 > ```
 > Otherwise, continue below both options are fully viable.
 
-### 🛠️ Option 2: Manual Update
+### 🛠️ Option 2: Manual Setup
 
 ```bash
 sudo apt update && sudo apt upgrade -y
