@@ -112,6 +112,11 @@
 | ⌨️ Pre-Config | Set up SSH, Wi-Fi, and Usernames *before* you even boot the drive |
 | 📦 Repo Install | Can be installed directly via terminal on Ubuntu/Debian systems |
 
+| Download | Link |
+| :--- | :--- |
+| 🌐 Official Website | [raspberrypi.com/software](https://www.raspberrypi.com/software/) |
+
 **Install via Terminal (Ubuntu/Debian):**
 ```bash
 sudo apt update && sudo apt install rpi-imager
+```
