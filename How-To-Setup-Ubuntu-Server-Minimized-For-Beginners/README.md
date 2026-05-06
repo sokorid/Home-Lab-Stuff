@@ -11,7 +11,7 @@
 - 🔌 **Ethernet Cable** — plugged into your router or switch
 - 💾 **USB Flash Drive** (8 GB or larger) — ⚠️ All data on the drive will be erased during installation. Back up any important files first!
 - 📥 **Ubuntu Server ISO File** — download the latest version from the official site: [ubuntu.com/download/server](https://ubuntu.com/download/server#release-notes)
-- 🔧 **A Bootable USB Tool** — not sure which one to use? Check out [The Best Tools for Creating a Bootable USB Drive](https://github.com/sokorid/Home-Lab-Stuff/blob/d1247a35f9c2222f91a1ff189f7767ebf7f69f07/%F0%9F%92%BE%20Best%20Tools%20to%20Create%20a%20Bootable%20USB%20Drive.md)
+- 🔧 **A Bootable USB Tool** — not sure which one to use? Check out [The Best Tools for Creating a Bootable USB Drive](https://github.com/sokorid/Home-Lab-Stuff/blob/a0e41f4b19d368946b2f66e1200be7c296ee33d4/%F0%9F%92%BE%20Best%20Tools%20to%20Create%20a%20Bootable%20USB%20Drive.md)
 
 ---
 
