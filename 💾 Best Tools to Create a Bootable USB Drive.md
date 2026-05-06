@@ -1,151 +1,117 @@
-# 💾 Best Tools to Create a Bootable USB Drive
+# 💾 Bootable USB Guide
 
-A bootable USB drive lets you install an operating system, run live environments, or recover a system. Below are the best tools for each platform, along with official download links.
+![OS](https://img.shields.io/badge/OS-Windows%20%7C%20macOS%20%7C%20Linux-0078D4?style=for-the-badge&logo=windows&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Maintained-success?style=for-the-badge)
+![Type](https://img.shields.io/badge/Category-Tools-FFD700?style=for-the-badge)
 
-> ⚠️ <mark>**Disclaimer:** Always download your tools from the official websites or verified GitHub releases to avoid tampered versions. I'm not responsible for you downloading the wrong thing.</mark>
-
----
-
-## What You'll Need
-
-- 🔌 **USB Flash Drive:** 8 GB or larger recommended
-- ⚠️ <mark>**Before you start:** Make sure to back up anything important on your USB drive. This process will wipe it completely.</mark>
+> [!CAUTION]
+> **Data Loss Warning:** Using these tools will completely wipe the target USB drive. Always double-check your drive selection before flashing to avoid losing data on the wrong disk.
 
 ---
 
-## Jump to your platform:
-- 🪟 [Windows](#-windows)
-- 🍎 [macOS](#-macos)
-- 🐧 [Linux](#-linux)
+## 📋 Tool Overview
+
+| Tool | Best For | Platform |
+|--------|-------------|----------|
+| ⚙️ Rufus | Fast, advanced Windows imaging & TPM bypass | 🪟 Windows |
+| 🐙 Ventoy | Storing multiple ISOs on one drive (Drag & Drop) | 🪟 🍎 🐧 All |
+| 🐳 balenaEtcher | Simple, foolproof flashing for beginners | 🪟 🍎 🐧 All |
+| 🍓 Raspberry Pi Imager | SD cards and Pi-specific OS versions | 🪟 🍎 🐧 All |
 
 ---
 
-## 🪟 Windows
+## 🛠️ Flashing Tools
 
-### 1. Rufus - Most Recommended
+---
 
-Rufus is the go-to tool for Windows users. It's lightweight, fast, and handles Windows ISOs exceptionally well — including support for bypassing TPM/Secure Boot requirements on Windows 11.
+<details>
+<summary>⚙️ Rufus (Windows Only)</summary>
+
+<br>
+
+`Rufus` is the gold standard for creating bootable Windows installers and Live Linux drives on Windows systems.
+
+| Feature | Details |
+|--------|---------|
+| ⚡ High Speed | Significantly faster than most competitors at writing ISOs |
+| 🔓 Win 11 Bypass | Can automatically remove TPM 2.0 and Secure Boot requirements |
+| 🛠️ Advanced Formatting | Full control over partition schemes (GPT/MBR) and Target system (UEFI/BIOS) |
+| 💾 Windows To Go | Option to install Windows directly onto the USB drive to run as a Live OS |
 
 | Download | Link |
-|----------|------|
-| 🌐 Official Website | [rufus.ie](https://rufus.ie/en/#download) |
-| 🏪 Microsoft Store | [Get on Microsoft Store](https://www.microsoft.com/store/productId/9PC3H3V7Q9CH) |
-| 🐙 GitHub Releases | [github.com/pbatard/rufus](https://github.com/pbatard/rufus/releases) |
+| :--- | :--- |
+| 🌐 **Official Website** | [rufus.ie](https://rufus.ie/en/#download) |
+| 🐙 **GitHub Releases** | [pbatard/rufus](https://github.com/pbatard/rufus/releases) |
+
+**[⬆ Back to Tool Overview](#-tool-overview)**
 
 ---
+</details>
 
-### 2. balenaEtcher - Beginner Friendly
+<details>
+<summary>🐙 Ventoy (Highly Recommended)</summary>
 
-A clean, beginner-friendly tool with a simple three-step interface. Great if you just want to flash an ISO quickly without fiddling with settings.
+<br>
+
+`Ventoy` is a "Swiss Army Knife" tool. You install it once on the USB, and then you just copy-paste ISO files like a regular flash drive.
+
+| Feature | Details |
+|--------|---------|
+| 📂 Multi-Boot | Store 10+ different ISOs on one drive and choose at boot |
+| 🖇️ Drag & Drop | No need to re-format the drive to change the OS; just delete/add files |
+| 🔄 Persistence | Supports persistence folders so your Linux changes save between reboots |
+| 💻 Cross-Platform | Tools available to install Ventoy from Windows, Linux, and macOS |
+
+| ⚠️ **Secure Boot Note** |
+| :--- |
+| **BIOS Configuration:** You may need to enter your BIOS/UEFI settings and **Disable Secure Boot** to allow Ventoy to boot correctly on some machines. |
 
 | Download | Link |
-|----------|------|
-| 🌐 Official Website | [etcher.balena.io](https://etcher.balena.io/#download-etcher) |
-| 🐙 GitHub Releases | [github.com/balena-io/etcher](https://github.com/balena-io/etcher/releases) |
+| :--- | :--- |
+| 🌐 **Official Website** | [ventoy.net](https://www.ventoy.net/en/download.html) |
+| 📦 **SourceForge** | [Ventoy Downloads](https://sourceforge.net/projects/ventoy/files/) |
+
+**[⬆ Back to Tool Overview](#-tool-overview)**
 
 ---
+</details>
 
-### 3. Ventoy - Multi-Boot
+<details>
+<summary>🐳 balenaEtcher (best for beginners)</summary>
 
-A unique approach — instead of flashing one ISO at a time, you install Ventoy onto a USB drive and then simply copy ISO files onto it. You can store multiple ISOs and pick which one to boot from a menu.
+<br>
 
-> 📝 My preferred method, despite occasional installation errors with specific ISO files.
+`balenaEtcher` focuses on being "flash and forget." It is a 3-step tool designed to prevent accidental drive wiping.
+
+| Feature | Details |
+|--------|---------|
+| 🛡️ Drive Validation | Verifies the written data to ensure the USB isn't corrupted |
+| 🚫 Accident Protection | Hidden system drives by default to prevent wiping your Hard Drive |
+| 🍎 Mac Specialist | Often the most reliable way to create bootable drives on macOS |
 
 | Download | Link |
-|----------|------|
-| 🌐 Official Website | [ventoy.net](https://www.ventoy.net/en/download.html) |
-| 📦 SourceForge | [sourceforge.net/projects/ventoy](https://sourceforge.net/projects/ventoy/files/) |
+| :--- | :--- |
+| 🌐 **Official Website** | [etcher.balena.io](https://etcher.balena.io/#download-etcher) |
+| 🐙 **GitHub Releases** | [balena-io/etcher](https://github.com/balena-io/etcher/releases) |
+
+**[⬆ Back to Tool Overview](#-tool-overview)**
 
 ---
+</details>
 
-### 4. Raspberry Pi Imager - Solid Choice
+<details>
+<summary>🍓 Raspberry Pi Imager</summary>
 
-Designed primarily for flashing Raspberry Pi OS, but it also supports a range of other operating systems. A good choice if you're working in the Raspberry Pi ecosystem.
+<br>
 
-| Download | Link |
-|----------|------|
-| 🌐 Official Website | [raspberrypi.com/software](https://www.raspberrypi.com/software/) |
+`Raspberry Pi Imager` is a specialized utility that downloads the OS for you before flashing.
 
----
+| Feature | Details |
+|--------|---------|
+| 📥 Cloud Download | Pick an OS from a list and it downloads the latest version automatically |
+| ⌨️ Pre-Config | Set up SSH, Wi-Fi, and Usernames *before* you even boot the drive |
+| 📦 Repo Install | Can be installed directly via terminal on Ubuntu/Debian systems |
 
-## 🍎 macOS
-
-### 1. balenaEtcher - Most Recommended
-
-The easiest option on macOS. No Terminal required — just select your ISO, select your drive, and flash.
-
-| Download | Link |
-|----------|------|
-| 🌐 Official Website | [etcher.balena.io](https://etcher.balena.io/#download-etcher) |
-| 🐙 GitHub Releases | [github.com/balena-io/etcher](https://github.com/balena-io/etcher/releases) |
-
----
-
-### 2. Raspberry Pi Imager - Solid Choice
-
-Simple and reliable, especially for Raspberry Pi images. Also supports other popular Linux distributions.
-
-| Download | Link |
-|----------|------|
-| 🌐 Official Website | [raspberrypi.com/software](https://www.raspberrypi.com/software/) |
-
----
-
-### 3. Ventoy - Multi-Boot
-
-Multi-boot support on macOS as well. Useful if you regularly work with multiple ISO files.
-
-| Download | Link |
-|----------|------|
-| 🌐 Official Website | [ventoy.net](https://www.ventoy.net/en/download.html) |
-| 📦 SourceForge | [sourceforge.net/projects/ventoy](https://sourceforge.net/projects/ventoy/files/) |
-
----
-
-## 🐧 Linux
-
-### 1. balenaEtcher - Most Recommended
-
-Works well on Linux and is one of the simplest options available.
-
-| Download | Link |
-|----------|------|
-| 🌐 Official Website | [etcher.balena.io](https://etcher.balena.io/#download-etcher) |
-| 🐙 GitHub Releases | [github.com/balena-io/etcher](https://github.com/balena-io/etcher/releases) |
-
----
-
-### 2. Ventoy - Multi-Boot
-
-Excellent on Linux, especially if you like to keep multiple ISOs ready to boot.
-
-| Download | Link |
-|----------|------|
-| 🌐 Official Website | [ventoy.net](https://www.ventoy.net/en/download.html) |
-| 📦 SourceForge | [sourceforge.net/projects/ventoy](https://sourceforge.net/projects/ventoy/files/) |
-
----
-
-### 3. Raspberry Pi Imager - Solid Choice
-
-Available as an AppImage or installable via terminal on Debian/Ubuntu-based systems.
-
-| Download | Link |
-|----------|------|
-| 🌐 Official Website | [raspberrypi.com/software](https://www.raspberrypi.com/software/) |
-
-**Debian/Ubuntu — install via terminal:**
-
+**Install via Terminal (Ubuntu/Debian):**
 ```bash
-sudo apt install rpi-imager
-```
-
-### 4. GNOME Disks / GNOME Multi-Writer / Fedora Media Writer
-
-These tools often come pre-installed depending on your Linux distribution. GNOME Disks is built into most GNOME-based distros, Fedora Media Writer ships with Fedora, and GNOME Multi-Writer is available in many package managers.
-
-> 📝 I haven't personally tested all of them in depth, so your mileage may vary.
-
----
-
-### 😊 That wraps up the guide! Hopefully, this helps someone out there. Peace out! 😊
+sudo apt update && sudo apt install rpi-imager
