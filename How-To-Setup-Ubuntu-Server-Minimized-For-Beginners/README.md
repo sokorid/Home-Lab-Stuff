@@ -1,5 +1,5 @@
 ## ▶️ YouTube Video Tutorial
-- [Step-by-Step Video Tutorial]
+- [Step-by-Step Video Tutorial](https://youtu.be/BaZ1btthkMM)
 
 ---
 
